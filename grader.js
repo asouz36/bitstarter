@@ -27,6 +27,7 @@ var cheerio = require('cheerio');
 var HTMLFILE_DEFAULT = "index.html";
 var CHECKSFILE_DEFAULT = "checks.json";
 var URL_DEFAULT = "http://murmuring-gorge-6743.herokuapp.com/";
+var outfile = "outHTML.html";
 var assertFileExists = function(infile) {
     var instr = infile.toString();
     if(!fs.existsSync(instr)) {
@@ -62,20 +63,13 @@ var checkHtmlFile = function(htmlfile, checksfile) {
 
 var sys = require('util'),
     rest =require('restler');
-var checkUrl = function(url, checksfile) {
+var checkUrl = function(url, checksfile,outfile) {
      rest.get(url).on('complete', function(result){
-     console.log(result);
-     $ = cheerio.load(result);
-     console.log($);
-     var checks = loadChecks(checksfile).sort();
-     var out = {};
-     for(var ii in checks) {
-       var present = $(checks[ii]).lenght > 0;
-       out[checks[ii]] = present;
-     }
-     var outJson = JSON.stringify(out, null, 4);
+     fs.writeFileSync(outfile, result);
+     var checkJson = checkHtmlFile(outfile, checksfile);
+     var outJson = JSON.stringify(checkJson, null, 4);
      console.log(outJson);
-    });
+     });
 }; 
 
 var clone = function(fn) {
@@ -96,6 +90,7 @@ if(require.main == module) {
       console.log(outJson);
    }
    if(program.url != null){
-      checkUrl(program.url, program.checks);
+      checkUrl(program.url, program.checks,outfile);
+      
    }
 }
