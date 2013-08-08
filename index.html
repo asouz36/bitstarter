@@ -43,9 +43,14 @@
        body {
         font-family: 'Open Sans', Helvetica, Arial, sans-serif;
        }
-      .heading, .subheading {
+      .heading {
         font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
         text-align: center;
+      }
+      .subheading {
+        margin: 10px 110px;
+        font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+        text-align: left;
       }
       p.lead {
         padding-top: 1.5%;
@@ -56,6 +61,22 @@
          font-size: 18px;
          line-height: 24px;
       }
+      h1.lead {
+           font-size: 28px;
+           font-weight: 500;
+           margin: 1em 0px 0px;
+       }
+      h1.tagline {
+           display: inline;
+           font-size: 48px;
+           line-height: 1.1em;
+           color: rgb(255, 255, 255);
+           position: relative;
+           height: 100%;
+           max-width: 15em;
+           text-shadow: 0px 0px 24px rgba(0, 0, 0, 0.5), 0px 0px 64px rgba(0, 0, 0, 0.25), 0px 2px rgba(0, 0, 0, 0.75);
+           font-family: "enriqueta-bold",Garamond,serif;
+       }
       /* Video pitch and Action */
       .pitch {
         padding: 2.5% 0%;
@@ -155,7 +176,7 @@
 	    <div class="span12">
 	       <!-- Special typography from Bootstrap for lead paragraph. -->
 	       <!-- http://twitter.github.io/bootstrap/base-css.html#typography -->
-	       <p class="lead">See every movement. Measure everything.</p>
+	       <h1 class="tagline">See every movement, Measure everything.</h1>
 	    </div>
 	 </div>
 	 <div class="row-fluid pitch">
@@ -195,14 +216,16 @@
                  <div class="bar bar-warning" style="width: 40%;"></div>
                </div>
              </div>
-             <div class="span6 offset3 order">
+             <div class="span10 offset1 order">
                <!-- Standard Bootstrap button. -->
                <!-- http://twitter.github.io/bootstrap/base-css.html#buttons -->
                <!--<button class="btn btn-success btn-large">Preorder</button>-->
-               <a class="coinbase-button" data-code="9685159b0a2960060e30856f73168a0e" 
+               <div align="center">
+                <a class="coinbase-button" data-code="9685159b0a2960060e30856f73168a0e" 
                   data-button-style="custom_small"
                   data-button-text="Preorder with Bitcoin"   
                   href="https://coinbase.com/checkouts/9685159b0a2960060e30856f73168a0e">Preorder with Bitcoin</a>
+               </div>
                <script src="https://coinbase.com/assets/button.js" type="text/javascript"></script>
              </div>
              <div class="span8 offset2 social">
@@ -232,10 +255,13 @@
              <img class="img-polaroid" src="https://s3.amazonaws.com/noht-images/articulated_objects.png">
            </div>
            <div class="span5 copy">
+             <p class="lead">Sharpen your performance</p>             
              <p>
               Your <b>Web App</b> to track and measure each body parts movement during plays.
-              Learn gestural patterns from star performers and compare with yours before  auditions. 
-              Design and protect your original work from imitators, step-by-step from the beginning to end, 
+              Learn gestural patterns from star performers and compare with yours before auditions.</p>
+             <p class="lead">Invent an original piece</p>   
+             <p> 
+              Design and protect your original work from imitators, step-by-step from the beginning to end,
               using a mobile device. 
               Communicate your vision better to Directors, Producers, Designers, Technical Staff and Performing Artists.
                <a href="#"> Preorder n&oacute today ></a>             
